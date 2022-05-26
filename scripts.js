@@ -1,7 +1,9 @@
 const $navbar = document.getElementById("navbar");
 const $navHamburger = document.querySelector(".btn-responsive");
 const $navList = document.querySelector(".nav__menu");
-const $servicesViewMore = document.querySelectorAll(".services__section__view-more");
+const $servicesViewMore = document.querySelectorAll(
+  ".services__section__view-more"
+);
 const $modalContainer = document.querySelector(".modal-container");
 const $modal = document.querySelector(".modal");
 const $modalTitle = document.querySelector(".modal__title");
@@ -31,27 +33,27 @@ $navList.addEventListener("click", (e) => {
 // Services
 const servicesList = [
   {
-    title: "Desarrollo Frontend",
+    title: "Mentoría",
     subTitle: "¿Qué ofrezco?",
     services: [
-      "Adaptación al diseño entregado",
-      "Página multi plataforma",
-      "Alta velocidad de carga",
-      "Web totalmente responsiva",
-    ],
-  },
-  {
-    title: "Diseño UX/UI",
-    subTitle: "¿Qué ofrezco?",
-    services: [
-      "Creación de Interfaces",
-      "Experiencia de usuario intuitiva",
-      "Elementos interactivos",
-      "Diseño atractivo",
+      "Mentoría durante 6 meses.",
+      "Reuniones informales, confidenciales y personalizadas enfocadas en las necesidades de tu empresa.",
+      "Una visión externa, la cual te ayuda a identificar mejoras y oportunidades.",
+      "Avanzar mas rápido y con mayor eficiencia.",
     ],
   },
   {
     title: "Mantenimiento Web",
+    subTitle: "¿Qué ofrezco?",
+    services: [
+      "Mantenimiento técnico",
+      "Renovación de Hosting",
+      "Dominio personalizado",
+      "Posicionamiento SEO",
+    ],
+  },
+  {
+    title: "Análisis de Datos",
     subTitle: "¿Qué ofrezco?",
     services: [
       "Mantenimiento técnico",
@@ -73,8 +75,9 @@ const addModal = (i) => {
   $modalSubtitle.textContent = servicesList[i].subTitle;
   let listTech = "";
   servicesList[i].services.forEach((tecnologia) => {
-    listTech += //Html
-    `
+    listTech +=
+      //Html
+      `
     <li class="modal__li">
       <h5 class="modal__tech"><span>✔️</span> ${tecnologia}</h5>
     </li>

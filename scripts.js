@@ -43,7 +43,7 @@ const servicesList = [
     ],
   },
   {
-    title: "Mantenimiento Web",
+    title: "Desarrollo Web",
     subTitle: "¿Qué ofrezco?",
     services: [
       "Mantenimiento técnico",

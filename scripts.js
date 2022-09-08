@@ -33,33 +33,35 @@ $navList.addEventListener("click", (e) => {
 // Services
 const servicesList = [
   {
-    title: "Mentoría",
+    title: "Consultoría TI",
     subTitle: "¿Qué ofrezco?",
     services: [
-      "Mentoría durante 6 meses.",
-      "Reuniones informales, confidenciales y personalizadas enfocadas en las necesidades de tu empresa.",
-      "Una visión externa, la cual te ayuda a identificar mejoras y oportunidades.",
-      "Avanzar mas rápido y con mayor eficiencia.",
+      "Gestión de proyectos TI.",
+      "Atención y asesoramiento personalizados.",
+      "Evolución y adaptación tecnológica.",
+      "Aumento de la productividad del proyecto.",
+      "Optimización del trabajo.",
+      "Aumento de la seguridad informática, de manera que se eviten posibles pérdidas de información.",
     ],
   },
   {
     title: "Desarrollo Web",
     subTitle: "¿Qué ofrezco?",
     services: [
-      "Mantenimiento técnico",
-      "Renovación de Hosting",
-      "Dominio personalizado",
-      "Posicionamiento SEO",
+      "Atención y asesoramiento personalizado.",
+      "Desarrollo web personalizado.",
+      "Desarrollo de tiendas virtuales.",
+      "Mantenimiento de plataformas.",
     ],
   },
   {
-    title: "Análisis de Datos",
+    title: "Data Analytics",
     subTitle: "¿Qué ofrezco?",
     services: [
-      "Mantenimiento técnico",
-      "Renovación de Hosting",
-      "Dominio personalizado",
-      "Posicionamiento SEO",
+      "Consultoría DataWarehouse",
+      "Inteligencia de Negocios",
+      "En proceso de planificación.",
+      "En proceso de planificación.",
     ],
   },
 ];

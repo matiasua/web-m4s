@@ -54,7 +54,10 @@ body {
 }
 
 .nav__logo {
-  height: 65px;
+  /* height: 100px; */
+  transform: scale(2.0);
+  max-height: 100px;
+  max-width: 100%;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -846,7 +849,8 @@ body {
   }
 
   .nav__logo {
-    height: 45px;
+    height: 70px;
+    transform: scale(2.0);
   }
 
   .nav__menu {

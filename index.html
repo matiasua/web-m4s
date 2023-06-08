@@ -11,6 +11,14 @@
             'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
       })(window, document, 'script', 'dataLayer', 'GTM-KKQJNVK');</script>
     <!-- End Google Tag Manager -->
+    <!-- Google captcha -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfFxHsmAAAAADx2PUFOS3041U7PUFl28gbX178i"></script>
+    <script>
+      function onSubmit(token) {
+        document.getElementById("contact").submit();
+      }
+    </script>
+    <!-- End Google captcha -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KE9PELRQK"></script>
     <script>
@@ -27,16 +35,16 @@
       name="description"
       content="Curioso y entusiasta Desarrollador DevOps Jr que está
       constantemente aprendiendo nuevas tecnologías y habilidades con un
-      gran gusto en el desarrollo de software y analisis de datos"
+      gran gusto en el desarrollo de software y ciberseguridad"
     />
     <meta
       name="keywords"
-      content="Matías Cárdenas,portafolio,desarrollador,desarrollador web,mantenimiento web,analisis de datos,devops,freelance,m4s"
+      content="Matías Cárdenas,portafolio,desarrollador,desarrollador web,mantenimiento web,analisis de datos,ciberseguridad,ciberdefensa,devops,freelance,m4s"
     />
     <meta name="robots" content="index,nofollow" />
     <meta name="author" content="Matías Cárdenas" />
     <!-- <link rel="canonical" href="https://matiasua.github.io/" /> -->
-    <link rel="shortcut icon" href="./images/logo.jpg" type="image/x-icon" />
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon" />
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,7 +64,7 @@
     <nav class="nav" id="navbar">
       <a href="#home"
         ><img
-          src="./images/logo.jpg"
+          src="./images/logo.svg"
           alt="m4s - Logo"
           class="nav__logo"
       /></a>
@@ -99,7 +107,7 @@
         <p class="home__paragraph">
           Soy un curioso y entusiasta Desarrollador DevOps Jr que está
           constantemente aprendiendo nuevas tecnologías y habilidades con un
-          gran gusto en el desarrollo de software y análisis de datos
+          gran gusto en el desarrollo de software y ciberseguridad.
         </p>
         <div class="social">
           <!-- <a
@@ -186,10 +194,10 @@
             src="./images/services/app_development_SVG.svg"
             alt="Imagen isometrica - Frontend"
           />
-          <h3 class="services__section__title">Consultoría TI</h3>
+          <h3 class="services__section__title">Consultoría en TI </h3>
           <p class="services__section__paragraph">
-            Servicios de consultoría, brindando asesoramiento a proyectos sobre cómo utilizar las tecnologías de la
-            información para lograr sus objetivos.
+            Servicios de asesoramiento estratégico y soluciones personalizadas para ayudar a los proyectos a alcanzar sus objetivos
+            mediante el aprovechamiento efectivo de las tecnologías de la información.
           </p>
           <a class="frontend services__section__view-more">Ver más</a>
         </article>
@@ -201,8 +209,8 @@
           />
           <h3 class="services__section__title">Desarrollo Web</h3>
           <p class="services__section__paragraph">
-            Desarrollo de plataformas web con la experiencia de usuario e interfaz optima que
-            tengas en mente para tu proyecto.
+            Servicios especializados en el desarrollo web, brindando soluciones personalizadas que se adaptan a tus necesidades y
+            objetivos específicos.
           </p>
           <a class="design services__section__view-more">Ver más</a>
         </article>
@@ -212,9 +220,9 @@
             src="./images/services/Startup_SVG.svg"
             alt="Imagen isometrica - Mantenimiento"
           />
-          <h3 class="services__section__title">Data Analytics</h3>
+          <h3 class="services__section__title">Ciberseguridad</h3>
           <p class="services__section__paragraph">
-            En proceso de planificación.
+            Protege tus activos digitales y mantén la seguridad de tu información contra las crecientes amenazas cibernéticas.
           </p>
           <a class="maintenance services__section__view-more">Ver más</a>
         </article>
@@ -434,6 +442,10 @@
       <div class="skills_container">
         <ul class="skills__lista">
           <li>
+            <img src="./images/skills/wp.svg" alt="WordPress icon" />
+            WordPress
+          </li>
+          <li>
             <img src="./images/skills/figma.svg" alt="Figma icon" />
             Figma
           </li>
@@ -472,6 +484,10 @@
           <li>
             <img src="./images/skills/kubernetes.svg" alt="kubernetes icon" />
             Kubernetes
+          </li>
+          <li>
+            <img src="./images/skills/ansible.svg" alt="ansible icon" />
+            Ansible
           </li>
           <li>
             <img src="./images/skills/python.svg" alt="django icon" />
@@ -532,11 +548,11 @@
           id="message"
           class="contact__input msg"
           type="text"
-          placeholder="Mensaje"
+          placeholder="Mensaje - Max 400 caracteres"
           required
-          maxlength="255"
+          maxlength="400"
         ></textarea>
-        <button type="submit" class="projects__card__btn contact__send">
+        <button type="submit" data-sitekey="6LfFxHsmAAAAADx2PUFOS3041U7PUFl28gbX178i" class="projects__card__btn contact__send g-recaptcha">
           Enviar
         </button>
       </form>

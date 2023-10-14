@@ -12,12 +12,12 @@
       })(window, document, 'script', 'dataLayer', 'GTM-KKQJNVK');</script>
     <!-- End Google Tag Manager -->
     <!-- Google captcha -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfFxHsmAAAAADx2PUFOS3041U7PUFl28gbX178i"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LfFxHsmAAAAADx2PUFOS3041U7PUFl28gbX178i"></script>
     <script>
       function onSubmit(token) {
         document.getElementById("contact").submit();
       }
-    </script>
+    </script> -->
     <!-- End Google captcha -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KE9PELRQK"></script>
@@ -519,7 +519,7 @@
           class="contact__input"
           type="email"
           placeholder="Correo Electronico"
-          pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+          pattern="/^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,15}$/"
           required
         />
         <textarea
@@ -531,7 +531,7 @@
           required
           maxlength="400"
         ></textarea>
-        <button type="submit" data-sitekey="6LfFxHsmAAAAADx2PUFOS3041U7PUFl28gbX178i" class="projects__card__btn contact__send g-recaptcha">
+        <button type="submit" data-sitekey="6LfFxHsmAAAAADx2PUFOS3041U7PUFl28gbX178i" class="projects__card__btn contact__send">
           Enviar
         </button>
       </form>

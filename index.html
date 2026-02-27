@@ -30,7 +30,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CL" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="M4S Solutions | Cloud, DevOps & Seguridad" />
   <meta name="twitter:description"
@@ -46,7 +46,11 @@
     "url": "https://m4s.cl",
     "image": "https://m4s.cl/images/og-image.jpg",
     "description": "Consultora de Servicios TI en Santiago, Chile. Especialistas en Cloud (AWS), DevOps, Kubernetes y Ciberseguridad.",
-    "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santiago",
+      "addressCountry": "CL"
+    },
     "areaServed": ["CL", "LatAm"],
     "telephone": "+56 9 4885 9111"
   }
@@ -54,17 +58,18 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-
-<!-- Google Tag Manager -->
-<script>(function (w, d, s, l, i) {
-    w[l] = w[l] || []; w[l].push({
-      'gtm.start':
-        new Date().getTime(), event: 'gtm.js'
-    }); var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-  })(window, document, 'script', 'dataLayer', 'GTM-KKQJNVK');</script>
-<!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KKQJNVK');
+  </script>
+  <!-- End GTM -->
 
   <style>
     :root {
@@ -120,7 +125,6 @@
       height: auto;
       margin-bottom: var(--space-2);
       filter: drop-shadow(0 15px 35px rgba(255, 60, 31, 0.15));
-      transition: transform 0.25s ease;
     }
 
     h1 {
@@ -164,39 +168,53 @@
       flex: 0 0 auto;
     }
 
-    .status span {
-      font-size: clamp(0.90rem, 2.4vw, 0.98rem);
-      font-weight: 400;
-      opacity: 0.92;
-      white-space: nowrap;
-    }
-
     .highlight {
       font-weight: 600;
       color: var(--accent);
       margin-bottom: var(--space-2);
     }
 
-    .actions {
-      display: flex;
-      justify-content: center;
+    .actions{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
-      flex-wrap: wrap;
       margin-top: var(--space-1);
+      width: 100%;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .btn-primary,
-    .btn-outline {
+    .btn-outline{
+      width: 100%;
       border-radius: 999px;
-      padding: 14px 26px;
+      padding: 14px 22px;
       text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      flex: 1 1 220px;
-      max-width: 360px;
+
+      /* evita “botones gigantes” por layout/zoom */
+      min-height: 52px;
+      line-height: 1;
+      white-space: nowrap;
+
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    @media (max-width: 520px){
+      .actions{
+        grid-template-columns: 1fr;
+        max-width: 420px;
+      }
+
+      .btn-primary,
+      .btn-outline{
+        white-space: normal; /* permite que "Hablar por WhatsApp" haga wrap si fuera necesario */
+        text-align: center;
+      }
     }
 
     .btn-primary {
@@ -206,11 +224,6 @@
       box-shadow: 0 10px 25px rgba(255, 60, 31, 0.15);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(255, 60, 31, 0.28);
-    }
-
     .btn-outline {
       border: 1.5px solid rgba(255, 255, 255, 0.35);
       color: #fff;
@@ -218,9 +231,9 @@
       background: rgba(255, 255, 255, 0.02);
     }
 
-    .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.65);
+    .btn-primary svg,
+    .btn-outline svg{
+      flex: 0 0 auto;
     }
 
     .seo {
@@ -243,11 +256,6 @@
       color: var(--accent);
     }
 
-    .seo-intro {
-      margin-bottom: var(--space-3);
-      color: var(--muted);
-    }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -259,7 +267,7 @@
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 14px;
-      padding: 16px 16px;
+      padding: 16px;
     }
 
     .card h3 {
@@ -274,7 +282,6 @@
 
     .card ul {
       list-style: none;
-      padding-left: 0;
       margin: 0;
       color: var(--muted);
       line-height: 1.7;
@@ -294,18 +301,6 @@
       left: 0;
       color: var(--accent);
       opacity: 0.95;
-    }
-
-    .seo-footer {
-      margin-top: var(--space-3);
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.7;
-    }
-
-    .seo-footer strong {
-      color: var(--text);
-      font-weight: 600;
     }
 
     footer {
@@ -332,33 +327,19 @@
         width: 100%;
       }
     }
-
-    @media (max-width: 340px) {
-      .status span {
-        white-space: normal;
-      }
-    }
-
-    @media (hover: none) {
-      .logo img:hover {
-        transform: none;
-      }
-
-      .btn-primary:hover,
-      .btn-outline:hover {
-        transform: none;
-      }
-    }
   </style>
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKQJNVK" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKQJNVK" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End GTM (noscript) -->
 
   <div class="container">
+
     <div class="hero">
       <div class="logo">
         <img src="/images/logo-m4s-white.png" alt="M4S Solutions">
@@ -391,19 +372,16 @@
           Hablar por WhatsApp
         </a>
 
-        <a href="mailto:contacto@m4s.cl" class="btn-outline" aria-label="Contactar por correo">
-          Correo
-        </a>
+        <a href="mailto:contacto@m4s.cl" class="btn-outline" aria-label="Contactar por correo">Correo</a>
       </div>
     </div>
 
     <section class="seo" aria-label="Servicios TI de M4S Solutions">
       <h2>Servicios TI en <span>Cloud, DevOps y Seguridad</span></h2>
 
-      <p class="seo-intro">
-        En <strong>M4S Solutions</strong> apoyamos a empresas de <strong>Servicios TI</strong>, integradores y equipos
-        de infraestructura en Chile y Latinoamérica a diseñar, implementar y operar plataformas modernas sobre
-        <strong>AWS</strong>.
+      <p style="color: var(--muted); margin-bottom: var(--space-3);">
+        En <strong>M4S Solutions</strong> apoyamos a empresas y equipos de infraestructura en Chile y Latinoamérica
+        a diseñar, implementar y operar plataformas modernas sobre <strong>AWS</strong>.
       </p>
 
       <div class="grid">
@@ -461,11 +439,6 @@
           </ul>
         </article>
       </div>
-
-      <p class="seo-footer">
-        ¿Buscas acelerar tus proyectos de <strong>AWS</strong>, <strong>DevOps</strong> o <strong>Seguridad</strong>?
-        Escríbenos por WhatsApp o correo y definimos un plan de trabajo.
-      </p>
     </section>
 
     <footer>© 2026 M4S Solutions · Ingeniería y Tecnología</footer>
